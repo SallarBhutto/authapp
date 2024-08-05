@@ -1,31 +1,6 @@
 version: '3.8'
 
 services:
-  # frontend:
-  #   build:
-  #     context: ./frontend
-  #     dockerfile: Dockerfile
-  #   container_name: frontend
-  #   ports:
-  #     - "3000:80"
-  #   depends_on:
-  #     - backend
-
-  # backend:
-  #   build:
-  #     context: ./backend
-  #     dockerfile: Dockerfile
-  #   container_name: backend
-  #   ports:
-  #     - "3001:3001"
-  #   environment:
-  #     - MONGODB_URI=mongodb://root:example@mongodb:27017
-  #     - REDIS_HOST=redis
-  #     - REDIS_PORT=6379
-  #   depends_on:
-  #     - mongodb
-  #     - redis
-
   mongodb:
     image: mongo:latest
     container_name: mongodb
@@ -45,6 +20,34 @@ services:
       - "6379:6379"
     volumes:
       - redis_data:/data
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: frontend
+    ports:
+      - "3000:80"
+    environment:
+      - REACT_APP_API_BASE_URL=http://backend:3001
+    depends_on:
+      - backend
+
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "3001:3001"
+    environment:
+      - MONGO_URI=mongodb://root:example@mongodb:27017/easygenerator?authSource=admin
+      - JWT_SECRET=your_jwt_secret_key
+      - REDIS_HOST=redis
+      - REDIS_PORT=6379
+    depends_on:
+      - mongodb
+      - redis
 
 volumes:
   mongodb_data:
