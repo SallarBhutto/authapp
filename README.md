@@ -179,10 +179,39 @@ If you encounter the `invalid ELF header` error on backend container, which is o
     # In the frontend directory
     npm start
     ```
+9. **Run Tests for Frontend and Backend**
 
-9. Access the frontend application at `http://localhost:3000`.
+   - **Frontend (React)**:
+     1. Navigate to the `frontend` directory:
+        ```bash
+        cd frontend
+        ```
+     2. Run the tests:
+        ```bash
+        npm test
+        ```
+     3. To run tests in watch mode (automatically re-runs tests on file changes):
+        ```bash
+        npm test -- --watch
+        ```
 
-10. The backend API can be accessed at `http://localhost:3001`.
+   - **Backend (NestJS)**:
+     1. Navigate to the `backend` directory:
+        ```bash
+        cd ../backend
+        ```
+     2. Run the tests:
+        ```bash
+        npm test
+        ```
+     3. To run tests with watch mode (automatically re-runs tests on file changes):
+        ```bash
+        npm run test:watch
+        ```
+
+10. Access the frontend application at `http://localhost:3000`.
+
+11. The backend API can be accessed at `http://localhost:3001`.
 
 ## Local Setup Notes
 
@@ -190,4 +219,4 @@ If you encounter the `invalid ELF header` error on backend container, which is o
 - Adjust the `.env` configuration based on your local setup and security requirements.
 - Verify that the required ports are open and not used by other applications.
 
-For more details on each component, refer to the respective service documentation.
+Thank you!
