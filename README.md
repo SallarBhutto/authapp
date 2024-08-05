@@ -121,7 +121,7 @@ If you encounter the `invalid ELF header` error on backend container, which is o
 1. Clone the main repository and initialize the submodules:
 
     ```bash
-    git clone --recurse-submodules <repository-url>
+    git clone --recurse-submodules https://github.com/SallarBhutto/authapp.git
     ```
 
 2. Navigate into the project directory:
