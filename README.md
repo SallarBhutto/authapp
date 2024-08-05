@@ -20,6 +20,8 @@ Easygenerator Auth app task
 
 - **Repository Name**: authapp
 - **Description**: The main repository for the Auth App project, which includes submodules for frontend and backend services.
+- **frontend**: https://github.com/SallarBhutto/frontend
+- **backend**: https://github.com/SallarBhutto/backend
 
 ## Components
 
