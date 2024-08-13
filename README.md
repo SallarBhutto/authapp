@@ -1,5 +1,5 @@
 # Application Overview
-Easygenerator Auth app task
+MERN Auth application
 
 **Notes:**
 - All secrets, such as database credentials and API keys, should be securely stored in a KeyVault rather than hard-coded in configuration files.
